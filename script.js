@@ -39,8 +39,6 @@ function salvarEstadoDoJogo() {
   localStorage.setItem('jogoTerminou', jogoTerminou.toString());
 }
 
-
-
 function carregarEstadoDoJogo() {
   const cells = document.querySelectorAll('[data-celula]');
   cells.forEach((cell, index) => {
@@ -54,15 +52,13 @@ function carregarEstadoDoJogo() {
   status.textContent = jogoTerminou ? '' : `É a vez do jogador ${jogadorAtual}`;
 }
 
-
-
 function clicarCelula(e) {
   if (jogoTerminou) return;
   const cell = e.target;
   const cellIndex = Array.from(cell.parentNode.children).indexOf(cell);
   if (cell.textContent === '') {
     cell.textContent = jogadorAtual;
-    localStorage.setItem(`celula_${cellIndex}`,jogadorAtual);
+    localStorage.setItem(`celula_${cellIndex}`, jogadorAtual);
     const vencedor = verificarVencedor();
     if (vencedor) {
       jogoTerminou = true;
@@ -79,7 +75,7 @@ function reiniciarJogo() {
   const cells = document.querySelectorAll('[data-celula]');
   cells.forEach((cell, index) => {
     cell.textContent = '';
-    localStorage.setItem(`celula_${index}`,'');
+    localStorage.setItem(`celula_${index}`, '');
   });
   jogadorAtual = 'X';
   jogoTerminou = false;
@@ -90,4 +86,12 @@ function reiniciarJogo() {
 tabuleiro.addEventListener('click', clicarCelula);
 document.getElementById('reiniciar').addEventListener('click', reiniciarJogo);
 
-salvarEstadoDoJogo();
+
+/*console.log('Estado inicial do Local Storage:');
+console.log(localStorage);*/
+
+
+carregarEstadoDoJogo();
+
+/*console.log('Estado após carregar do Local Storage:');
+console.log(localStorage);*/
