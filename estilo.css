@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('img/fundo_jogo_velha.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .tabuleiro {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .cell {
+    background-color: #0092B9;
+    border: 1px solid #0092B9;
+    font-size: 30px;
+    cursor: pointer;
+    width: 100px; 
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cell:hover {
+    background-color: #B5F1FF;
+  }
+  
+  .status {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .botao-reiniciar {
+    font-family: 'Press Start 2P', cursive;
+    padding: 8px 10px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #2232C5;
+    color: #FFE100;
+    border: none;
+  }
+  
+  .botao-reiniciar:hover {
+    background-color: #0056b3;
+  }
+  
